@@ -19,6 +19,6 @@ $twig = new Twig_Environment($loader, array(
     // 'cache' => '/path/to/compilation_cache',
     'auto_reload' => true
 ));
-$template = $twig->loadTemplate('vegetable.html.twig');
+$template = $twig->loadTemplate('vegetables.html.twig');
 $parametersToTwig = array("vegetables" => $vegetables);
 echo $template->render($parametersToTwig);

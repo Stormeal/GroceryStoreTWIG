@@ -21,23 +21,25 @@
     </form>
 
     <h2>Add Vegetables</h2>
-    <table>
-        <tr>
-            <td><input type="text" name="name" placeholder="Insert Name"></td>
-        </tr>
-        <tr>
-            <td><input type="number" step="0.01" name="price" placeholder="Declare Price"></td>
-        </tr>
-        <tr>
-            <td><input type="text" name="type" placeholder="Insert Type of Vegetable"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <input style="width: 100%" type="submit" value="Add"/>
-            </td>
-        </tr>
-    </table>
+    <form action="controllers/newVegetable.php" method="post">
+        <table>
+            <tr>
+                <td><input type="text" name="name" placeholder="Insert Name"></td>
+            </tr>
+            <tr>
+                <td><input type="number" step="0.01" name="price" placeholder="Declare Price"></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="type" placeholder="Insert Type of Vegetable"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input style="width: 100%" type="submit" value="Add"/>
+                </td>
+            </tr>
+        </table>
+    </form>
 </div><!-- Container -->
 
 <script src="js/jquery.slim.min.js"></script>
