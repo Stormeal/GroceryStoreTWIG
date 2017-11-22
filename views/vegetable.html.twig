@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <title>Grocery Store</title>
+</head>
+<body>
+<div class="container">
+
+<h1>Vegetables</h1>
+    {% if vegetables is empty %}
+            No vegetables
+    {% else %}
+    <ul>
+        {% for vegetable in vegetables %}
+        <li>
+            {{ vegetable.Id }}
+            <b>{{ vegetable.Name }}</b>
+            <i>{{ vegetable.Price }}</i>
+            {{ vegetable.Type }}
+        </li>
+        {% endfor %}
+    {% endif %}</ul>
+
+</div><!-- Container -->
+
+<script src="../js/jquery.slim.min.js"></script>
+<script src="../js/tether.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/scripts.js"></script>
+</body>
+</html>
