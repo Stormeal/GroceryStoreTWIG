@@ -35,3 +35,7 @@ $template = $twig->loadTemplate('vegetables.html.twig');
 $parametersToTwig = array("vegetables" => $response);
 echo $template->render($parametersToTwig);
 
+$host = $_SERVER['HTTP_HOST'];
+header("Location: http://{$host}/GroceryStoreTWIG/controllers/allvegetables.php");
+return;
+

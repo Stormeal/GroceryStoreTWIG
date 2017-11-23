@@ -7,25 +7,95 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <title>Grocery Store</title>
 </head>
-<body>
+<body class="bg-faded">
 <div class="container">
+    <div class="row">
+        <section class="col-12">
 
-<h1>Vegetables</h1>
-    {% if vegetables is empty %}
-            No vegetables
-    {% else %}
-    <ul>
-        {% for vegetable in vegetables %}
-        <li>
-            {{ vegetable.Id }}
-            <b>{{ vegetable.Name }}</b>
-            <i>{{ vegetable.Price }}</i>
-            {{ vegetable.Type }}
-        </li>
-        {% endfor %}
-    {% endif %}</ul>
 
-</div><!-- Container -->
+            <nav class="navbar navbar-inverse fixed-top bg-success inverse justify-content-center navbar-toggleable-sm">
+                <div class="container">
+                    <button class="navbar-toggler navnbar-toggler-right" type="button" data-toggle="collapse"
+                            data-target="#myContent" aria-controls="myContent" aria-expanded="false"
+                            aria-label="Toggle Navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a href="#" class="navbar-brand">GroceryStore</a>
+
+                    <div class="collapse navbar-collapse" id="myContent">
+                        <div class="navbar-nav mr-auto ml-3">
+                            <a class="nav-link active nav-item" href="../index.html">Home</a>
+                            <a class="nav-link active nav-item" href="../controllers/allvegetables.php">Vegetables</a>
+                            <a class="nav-link disabled nav-item" href="#">About Us</a>
+                        </div> <!--Navbar-nav-->
+
+
+                        <form class="form-inline align-middle">
+                            <input class="form-control mr-2" placeholder="Search">
+                            <button class="btn">GO</button>
+                        </form>
+
+                    </div>
+                </div> <!--Container-->
+            </nav>
+
+
+            <div class="container" style="margin: 60px">
+
+                <h1>Vegetables</h1>
+                {% if vegetables is empty %}
+                No vegetables
+                {% else %}
+
+
+                <table class="table table-hover">
+                    <thread>
+                        <tr>
+                            <th>#</th>
+                            <th class="col-md-2">Name</th>
+                            <th class="col-md-2">Type</th>
+                            <th class="col-md-2">Price</th>
+                            <th class="col-md-1"></th>
+                            <th class=""></th>
+                        </tr>
+
+                    </thread>
+                    <tbody>
+                    {% for vegetable in vegetables %}
+                    <tr>
+                        <th scope="row">{{ vegetable.Id }}</th>
+                        <td>
+                            {{ vegetable.Name }}
+                        </td>
+                        <td>
+                            {{ vegetable.Type }}
+                        </td>
+                        <td>
+                            {{ vegetable.Price }}
+                        </td>
+                        <td>
+                            <button class="btn btn-outline-info">Edit</button>
+                        </td>
+                        <td>
+                            <a class="btn btn-outline-danger"
+                               href="../controllers/deleteVegetableById.php?id={{ vegetable.Id }}">
+                                Remove
+                            </a>
+                        </td>
+                        {% endfor %}
+                        {% endif %}
+
+                    </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div><!-- Container -->
+
+        </section>
+    </div>
+</div>
 
 <script src="../js/jquery.slim.min.js"></script>
 <script src="../js/tether.min.js"></script>

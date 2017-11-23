@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table>
+
+    {% if vegetables is empty %}
+    No vegetables
+    {% else %}
+
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        {% for vegetable in vegetables %}
+        <th scope="row">{{ vegetable.id }}</th>
+        <td>{{ vegetable.Name }}</td>
+        <td>{{ vegetable.Type }}</td>
+        <td>{{ vegetable.Price }}</td>
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>

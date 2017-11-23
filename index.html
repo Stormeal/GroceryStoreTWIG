@@ -5,48 +5,92 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/styles.css">
     <title>Grocery Store</title>
 </head>
-<body>
+<body class="bg-faded">
 <div class="container">
+    <div class="row">
+        <section class="col-12">
 
-    <h1>Grocery Store</h1>
-    <h2>All Vegetables</h2>
-    <a href="controllers/allvegetables.php">All Vegetables</a>
 
-    <h2>Get Vegetables by Id</h2>
-    <form action="controllers/vegetableById.php" method="post">
-        <input type="number" name="id" placeholder="Id"/>
-        <input type="submit" value="Search"/>
-    </form>
+            <nav class="navbar navbar-inverse fixed-top bg-success inverse justify-content-center navbar-toggleable-sm">
+                <div class="container">
+                    <button class="navbar-toggler navnbar-toggler-right" type="button" data-toggle="collapse"
+                            data-target="#myContent" aria-controls="myContent" aria-expanded="false"
+                            aria-label="Toggle Navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a href="#" class="navbar-brand">GroceryStore</a>
 
-    <h2>Get Vegetable by Name</h2>
-    <form action="controllers/vegetableByName.php" method="post">
-        <input type="text" name="nameFragment" placeholder="Name (Fragment)"/>
-        <input type="submit" value="Search">
-    </form>
+                    <div class="collapse navbar-collapse" id="myContent">
+                        <div class="navbar-nav mr-auto ml-3">
+                            <a class="nav-link active nav-item" href="index.html">Home</a>
+                            <a class="nav-link active nav-item" href="controllers/allvegetables.php">Vegetables</a>
+                            <a class="nav-link disabled nav-item" href="#">About Us</a>
+                        </div> <!--Navbar-nav-->
 
-    <h2>Add Vegetables</h2>
-    <form action="controllers/newVegetable.php" method="post">
-        <table>
-            <tr>
-                <td><input type="text" name="name" placeholder="Insert Name"></td>
-            </tr>
-            <tr>
-                <td><input type="number" step="0.01" name="price" placeholder="Declare Price"></td>
-            </tr>
-            <tr>
-                <td><input type="text" name="type" placeholder="Insert Type of Vegetable"></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <input style="width: 100%" type="submit" value="Add"/>
-                </td>
-            </tr>
-        </table>
-    </form>
-</div><!-- Container -->
+
+                        <form class="form-inline align-middle">
+                            <input class="form-control mr-2" placeholder="Search">
+                            <button class="btn">GO</button>
+                        </form>
+
+                    </div>
+                </div> <!--Container-->
+            </nav>
+
+            <div class="container" style="margin-top: 65px;">
+                <h2>Get Vegetables by Id</h2>
+                <p class="font-italic">This function is pretty much self explanatory, it allows you to search for a
+                    specific
+                    vegetable only using the ID. Thought it requires that you know the ID of the vegetable of which you
+                    want to
+                    search for. </p>
+                <form class="form-inline" action="controllers/vegetableById.php" method="post">
+                    <input class="form-control mr-2" type="number" name="id" placeholder="Id"/>
+                    <input class="form-control mr-2 btn-success" type="submit" value="Search"/>
+                </form>
+                <br/><br/>
+
+                <h2>Get Vegetable by Name</h2>
+                <p class="font-italic">This functions works similarly to the function above. Here you can search for
+                    vegetables
+                    using the name. </p>
+                <form class="form-inline" action="controllers/vegetableByName.php" method="post">
+                    <input class="form-control mr-2" type="text" name="nameFragment" placeholder="Name (Fragment)"/>
+                    <input class="form-control mr-2 btn-success" type="submit" value="Search">
+                </form><br/><br/>
+
+                <h2>Add Vegetables</h2>
+                <form class="form-inline" action="controllers/newVegetable.php" method="post">
+                    <table class="table table-striped">
+                        <tr>
+                            <td><input class="form-control" type="text" name="name" placeholder="Name"></td>
+                        </tr>
+                        <tr>
+                            <td><input class="form-control" type="number" name="price" placeholder="Price"></td>
+                        </tr>
+                        <tr>
+                            <td><input class="form-control" type="text" name="type" placeholder="Insert Type"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input class="form-control btn-success ml-3 " type="submit" value="Add"/>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+
+
+            </div><!-- Container -->
+
+
+        </section> <!-- SECTION-->
+    </div><!-- ROW-->
+</div><!-- CONTAINER-->
+
 
 <script src="js/jquery.slim.min.js"></script>
 <script src="js/tether.min.js"></script>
