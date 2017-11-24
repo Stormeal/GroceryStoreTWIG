@@ -10,10 +10,10 @@
 </head>
 <body class="bg-faded">
 <div class="container">
+
+
     <div class="row">
         <section class="col-12">
-<-! test -->
-
             <nav class="navbar navbar-inverse fixed-top bg-success inverse justify-content-center navbar-toggleable-sm">
                 <div class="container">
                     <button class="navbar-toggler navnbar-toggler-right" type="button" data-toggle="collapse"
@@ -40,7 +40,20 @@
                 </div> <!--Container-->
             </nav>
 
-            <div class="container" style="margin-top: 65px;">
+            <header class="jumbotron mt-0 bg-success text-white">
+                <div class="container">
+                    <div class="display-2">Mitsuwa Grocery Store</div>
+                    <p class="lead"> This webpage is meant for a educational side project. This project is not meant as a
+                        school project, but rather a self made exercise. This allows me to practice some of the PHP
+                        exercises that I've made during 3rd Semester, and use them together with Bootstrap to make a user
+                        friendly interface. While also displaying what I've learnt using <i>php, TWIG, REST</i> in a single
+                        project. </p>
+                </div>
+
+            </header>
+
+
+            <div class="container" style="margin-top: 45px;">
                 <h2>Get Vegetables by Id</h2>
                 <p class="font-italic">This function is pretty much self explanatory, it allows you to search for a
                     specific
@@ -60,7 +73,8 @@
                 <form class="form-inline" action="controllers/vegetableByName.php" method="post">
                     <input class="form-control mr-2" type="text" name="nameFragment" placeholder="Name (Fragment)"/>
                     <input class="form-control mr-2 btn-success" type="submit" value="Search">
-                </form><br/><br/>
+                </form>
+                <br/><br/>
 
                 <h2>Add Vegetables</h2>
                 <form class="form-inline" action="controllers/newVegetable.php" method="post">
@@ -82,11 +96,35 @@
                         </tr>
                     </table>
                 </form>
+                <br/>
+
+                <h2>Update Vegetable <span class="badge badge-danger">new</span></h2>
+                <form action="controllers/updateVegetable.php" method="post">
+                    <label for="id">Id</label>
+                    <input type="number" name="id" id="id"/><br/>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name"/><br/>
+                    <label for="type">Type</label>
+                    <input type="text" name="type" id="type"/><br/>
+                    <label for="price">Price</label>
+                    <input type="number" name="price" id="price">
+
+                    <span class="form-field-no-caption">
+                        <input type="submit" value="Update">
+                    </span>
+
+
+                </form>
+
+                <div class="alert alert-success mt-5">
+                    <h4 class="alert-heading">Developer Signature</h4>
+                    <p class="mb-2">To find out more information about this developer, please check the links below.</p>
+                    <a class="alert-link" href="https://github.com/Stormeal">Github</a>
+                    <a class="alert-link align-content-end" href="https://www.linkedin.com/in/alex-storm-99823496/">LinkedIn</a>
+                </div>
 
 
             </div><!-- Container -->
-
-
         </section> <!-- SECTION-->
     </div><!-- ROW-->
 </div><!-- CONTAINER-->
